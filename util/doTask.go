@@ -29,6 +29,7 @@ func DoTask(phone, passwd string) {
 					fmt.Printf("phone:%s, Attend failed for accessToken invalid, request new accessToken......\n", phone)
 					accessToken = Login(phone, passwd)
 				} else if resultCode == 0 && resultErrorCode == 400021 {
+					lastAttendanceDay = currentDay
 					fmt.Printf("phone:%s, Attend failed for today has attended\n", phone)
 				} else {
 					fmt.Printf("phone:%s, Attend failed, code:%d, err_code:%d\n", phone, resultCode, resultErrorCode)
