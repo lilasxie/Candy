@@ -1,0 +1,5 @@
+# conf ignore
+conf/conf.json
+
+# build ignore
+*.exe
