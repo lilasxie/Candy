@@ -38,7 +38,7 @@ func DoTask(phone, passwd string) {
 
 			// 开宝箱任务
 			lastestRewardedTimeStr, taskPeriod := ComputeTime(accessToken)
-			if lastestRewardedTimeStr != "" && taskPeriod > 0 {
+			if lastestRewardedTimeStr != "error" && taskPeriod > 0 {
 				fmt.Printf("phone:%s, ComputeTime success\n", phone)
 				lastestRewardedTime, err := time.Parse(time.RFC3339, lastestRewardedTimeStr)
 				if err == nil {
