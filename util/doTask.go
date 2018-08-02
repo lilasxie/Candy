@@ -40,7 +40,7 @@ func DoTask(phone, passwd string) {
 			// 开宝箱任务
 			lastestRewardedTimeStr, taskPeriod := ComputeTime(accessToken)
 			if lastestRewardedTimeStr != "error" && taskPeriod > 0 {
-				fmt.Printf("phone:%s, ComputeTime success\n", phone)
+				// fmt.Printf("phone:%s, ComputeTime success\n", phone)
 				lastestRewardedTime, err := time.Parse(time.RFC3339, lastestRewardedTimeStr)
 				if err == nil {
 					fmt.Printf("phone:%s, Last rewarded time: %v\n", phone, lastestRewardedTime.In(time.Local))
@@ -68,7 +68,7 @@ func DoTask(phone, passwd string) {
 						nextOpenTimeUnix := nextRewardedTimeUnix + extTimeUnix
 						//需等待时长
 						sleepTimeUnix := time.Duration(nextRewardedTimeUnix-curUnixTimeUnix+extTimeUnix) * time.Second
-						fmt.Printf("phone:%s, Open treasure box failed because of time has not reached, will be opened on %v\n", phone, time.Unix(nextOpenTimeUnix, 0).In(time.Local))
+						fmt.Printf("phone:%s, Open treasure box failed for time has not reached, will be opened on %v\n", phone, time.Unix(nextOpenTimeUnix, 0).In(time.Local))
 						time.Sleep(sleepTimeUnix)
 					}
 				} else {
