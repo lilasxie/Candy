@@ -2,4 +2,5 @@
 conf/conf.json
 
 # build ignore
+Candy
 *.exe

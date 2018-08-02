@@ -9,14 +9,15 @@ import (
 //DoTask 模拟执行各个任务
 func DoTask(phone, passwd string) {
 	accessToken := Login(phone, passwd)
+	// 签到任务下线，关闭签到功能(pS:后台接口并未关闭, 但是大佬说还是要关闭签到功能)
 	// 假设每次启动都还未签到，默认上一次签到为昨天
-	lastAttendanceDay := time.Now().AddDate(0, 0, -1).Day()
+	// lastAttendanceDay := time.Now().AddDate(0, 0, -1).Day()
 	for {
 		fmt.Println("**************************************" + phone + "*****************************************")
 		if accessToken != "" {
 			fmt.Printf("phone:%s, accessToken = %s\n", phone, accessToken)
 			// 签到任务
-			currentDay := time.Now().Day()
+			/*currentDay := time.Now().Day()
 			fmt.Printf("phone:%s, currentDay:%d, lastAttendanceDay:%d\n", phone, currentDay, lastAttendanceDay)
 			if currentDay != lastAttendanceDay {
 				resultCode, resultErrorCode := Attend(accessToken)
@@ -34,7 +35,7 @@ func DoTask(phone, passwd string) {
 				} else {
 					fmt.Printf("phone:%s, Attend failed, code:%d, err_code:%d\n", phone, resultCode, resultErrorCode)
 				}
-			}
+			}*/
 
 			// 开宝箱任务
 			lastestRewardedTimeStr, taskPeriod := ComputeTime(accessToken)
