@@ -17,6 +17,7 @@ func main() {
 		}
 	}
 
+	fmt.Printf("Server(Listen on %s) is starting...\n", port)
 	port = ":" + port
 	err := http.ListenAndServe(port, nil) //设置监听的端口
 	if err != nil {

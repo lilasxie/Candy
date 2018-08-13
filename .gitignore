@@ -1,5 +1,11 @@
+#IDE ignore
+.vscode/
+
 # conf ignore
-conf/conf.json
+conf/
+
+#logs ignore
+logs/
 
 # build ignore
 Candy
