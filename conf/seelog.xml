@@ -1,0 +1,10 @@
+<seelog type="asynctimer" asyncinterval="5000000" minlevel="trace" maxlevel="error">
+	<outputs formatid="common">
+		<buffered formatid="common" size="10000" flushperiod="1000">
+			<rollingfile type="date" filename="logs/candy" datepattern="2006.01.02.log" fullname="true" maxrolls="30"/>
+		</buffered>
+	</outputs>
+	<formats>
+		<format id="common" format="%Date(2006 Jan 02/3:04:05.000000000 PM MST) [%LEV] [%File:%Line] [%Func] %Msg%n" />
+    </formats>
+</seelog>

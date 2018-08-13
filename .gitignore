@@ -2,7 +2,7 @@
 .vscode/
 
 # conf ignore
-conf/
+conf/conf.json
 
 #logs ignore
 logs/
