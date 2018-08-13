@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	defer util.Pause()
 	authArray, port := util.InitConfig()
 	if len(authArray) > 0 {
 		for _, value := range authArray {
@@ -20,7 +21,5 @@ func main() {
 	err := http.ListenAndServe(port, nil) //设置监听的端口
 	if err != nil {
 		fmt.Println("ListenAndServe: ", err)
-		util.Pause()
 	}
-	fmt.Println("Start server success, listen on port", port)
 }
