@@ -5,6 +5,6 @@
 		</buffered>
 	</outputs>
 	<formats>
-		<format id="common" format="%Date(2006 Jan 02/3:04:05.000000000 PM MST) [%LEV] [%File:%Line] [%Func] %Msg%n" />
+		<format id="common" format="%Date(2006 Jan 02 15:04:05.000000000 PM MST) [%LEV] [%File:%Line] [%Func] %Msg%n" />
     </formats>
 </seelog>
