@@ -9,4 +9,5 @@ logs/
 
 # build ignore
 Candy
+Candy.lnk
 *.exe
