@@ -34,7 +34,8 @@ func ComputeTime(accessToken string) (string, int64) {
 			errorCodeObj := gjson.Get(respStr, "err.err_code")
 			if errorCodeObj.Exists() {
 				errorCode := errorCodeObj.Int()
-				fmt.Printf("ComputeTime failed, code: %d, errorCode: %d\n", code, errorCode)
+				errorMsg := gjson.Get(respStr, "err.message").String()
+				fmt.Printf("ComputeTime failed, code: %d, errorCode: %d, message: %s\n", code, errorCode, errorMsg)
 				return "error", errorCode
 			}
 		} else if code == 1 {

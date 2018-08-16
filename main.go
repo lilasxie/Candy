@@ -4,6 +4,9 @@ import (
 	"Candy/util"
 	"fmt"
 	"net/http"
+	_ "net/http/pprof" //监控性能及GC调优
+
+	log "github.com/cihub/seelog"
 )
 
 // tryCatch 实现 try catch.
@@ -19,6 +22,7 @@ func tryCatch(try func(phone, passwd string), handler func(interface{}), phone s
 
 func main() {
 	defer func() {
+		log.Flush()
 		if err := recover(); err != nil {
 			fmt.Printf("%v", err)
 			util.Pause()
