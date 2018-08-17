@@ -16,6 +16,7 @@ func getLogger() log.LoggerInterface {
 	//加载配置文件
 	logger, err := log.LoggerFromConfigAsFile("conf/seelog.xml")
 	if err != nil {
+		fmt.Println(err)
 		panic("Open seelog.xml failed!")
 	}
 	return logger
