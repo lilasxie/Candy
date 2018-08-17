@@ -1,6 +1,6 @@
 <seelog type="asynctimer" asyncinterval="5000000" minlevel="trace" maxlevel="error">
 	<outputs formatid="common">
-		<buffered formatid="common" size="1" flushperiod="10">
+		<buffered formatid="common" size="10000" flushperiod="1000">
 			<rollingfile type="date" filename="logs/candy" datepattern="2006.01.02.log" fullname="true" maxrolls="30" archivetype="gzip"/>
 		</buffered>
 	</outputs>
