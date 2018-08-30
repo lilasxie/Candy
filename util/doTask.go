@@ -26,7 +26,7 @@ func getLogger() log.LoggerInterface {
 func keepGroutineAlive(phone string) *cron.Cron {
 	taskCron := cron.New()
 	//spec := "0 */5 * * * ?"
-	spec := "@every 30m"
+	spec := "@every 15m"
 	taskCron.AddFunc(spec, func() {
 		logger.Infof("Keep goroutine alive for phone : %s, current time: %s\n", phone, time.Now().Format("2006-01-02 15:04:05"))
 	})
